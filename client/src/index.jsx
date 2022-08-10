@@ -25,9 +25,9 @@ class App extends React.Component {
     }
   };
 
-  componentDidMount = () => {
-    this.getTheNews();
-  }
+  // componentDidMount = () => {
+  //   this.getTheNews();
+  // }
 
   getTheNews = async () => {
     await Promise.all([
@@ -65,7 +65,8 @@ class App extends React.Component {
       axios.get(`/titles/${this.state.player}`),
     ])
       .then(res => {
-        console.log(res);
+        document.getElementById('InField').value = '';
+        // console.log(res);
         this.setState({
           ranks: res[0].data.ranks,
           rewards: res[0].data.reward,
@@ -93,10 +94,10 @@ class App extends React.Component {
           homeButton={this.homeButton}
           >
         </Nav>
-        {this.state.showHomePage ? <Home
+        {/* {this.state.showHomePage ? <Home
           news={this.state.news}
-        ></Home> : null}
-        {this.state.ranks.length > 0 ?
+        ></Home> : null} */}
+        {/* {this.state.ranks.length > 0 ? */}
         <Stats
         player={this.state.player}
         ranks={this.state.ranks}
@@ -108,7 +109,8 @@ class App extends React.Component {
         goals={this.state.goals}
         assists={this.state.assists}
         titles={this.state.titles}
-        ></Stats> : null}
+        ></Stats>
+         {/* : null} */}
       </>
       // {/* </AppContainer> */}
     )

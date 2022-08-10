@@ -21,7 +21,7 @@ class Stats extends React.Component {
         <H4s>Playlist / Ranks</H4s>
         <OrdList>
           {this.props.ranks.map(playlist => {
-            return <Lists>{playlist.playlist}: {playlist.rank} Div. {playlist.division}</Lists>
+            return <Lists>{playlist.playlist}: {playlist.rank} Div. {playlist.division} ({playlist.mmr})</Lists>
           })}
         </OrdList>
         <H4s>Current Statistics</H4s>

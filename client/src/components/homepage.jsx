@@ -25,7 +25,8 @@ class Home extends React.Component {
         {/* <H4s>Rocket League Current Events</H4s> */}
         <Carousel autoPlay interval="5000" transitionTime="600" infiniteLoop>
           {this.props.news.map(theNew => {
-            return <><PTagCarousel>{theNew.title}</PTagCarousel><img style={{padding: '5px', border: '5px', borderColor: 'black', borderRadius: '20px'}} src={theNew.image}/></>
+            let slug = `https://www.rocketleague.com${theNew.slug}`;
+            return <><a style={{textDecoration: 'none'}} href={slug}><PTagCarousel>{theNew.title}</PTagCarousel></a><img style={{padding: '5px', border: '5px', borderColor: 'black', borderRadius: '20px'}} src={theNew.image}/></>
           })}
         </Carousel>
       </>
