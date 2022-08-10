@@ -25,9 +25,9 @@ class App extends React.Component {
     }
   };
 
-  // componentDidMount = () => {
-  //   this.getTheNews();
-  // }
+  componentDidMount = () => {
+    this.getTheNews();
+  }
 
   getTheNews = async () => {
     await Promise.all([
@@ -66,19 +66,35 @@ class App extends React.Component {
     ])
       .then(res => {
         document.getElementById('InField').value = '';
-        // console.log(res);
-        this.setState({
-          ranks: res[0].data.ranks,
-          rewards: res[0].data.reward,
-          wins: res[1].data,
-          mvps: res[2].data,
-          shots: res[3].data,
-          saves: res[4].data,
-          goals: res[5].data,
-          assists: res[6].data,
-          titles: res[7].data.titles,
-          showHomePage: false,
-        });
+        console.log(res);
+        if (res[0].data.length === 2) {
+          this.setState({
+            ranks: res[0].data,
+            rewards: res[0].data.reward,
+            wins: res[1].data,
+            mvps: res[2].data,
+            shots: res[3].data,
+            saves: res[4].data,
+            goals: res[5].data,
+            assists: res[6].data,
+            titles: res[7].data.titles,
+            showHomePage: false,
+          });
+        } else {
+          this.setState({
+            ranks: res[0].data.ranks,
+            rewards: res[0].data.reward,
+            wins: res[1].data,
+            mvps: res[2].data,
+            shots: res[3].data,
+            saves: res[4].data,
+            goals: res[5].data,
+            assists: res[6].data,
+            titles: res[7].data.titles,
+            showHomePage: false,
+          });
+        }
+
       });
   };
 
@@ -94,10 +110,10 @@ class App extends React.Component {
           homeButton={this.homeButton}
           >
         </Nav>
-        {/* {this.state.showHomePage ? <Home
+        {this.state.showHomePage ? <Home
           news={this.state.news}
-        ></Home> : null} */}
-        {/* {this.state.ranks.length > 0 ? */}
+        ></Home> : null}
+        {this.state.ranks.length > 0 ?
         <Stats
         player={this.state.player}
         ranks={this.state.ranks}
@@ -109,8 +125,7 @@ class App extends React.Component {
         goals={this.state.goals}
         assists={this.state.assists}
         titles={this.state.titles}
-        ></Stats>
-         {/* : null} */}
+        ></Stats> : null}
       </>
       // {/* </AppContainer> */}
     )

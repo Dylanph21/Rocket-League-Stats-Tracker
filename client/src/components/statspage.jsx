@@ -10,6 +10,38 @@ class Stats extends React.Component {
     }
   }
 
+  ranksCheck = () => {
+    if (this.props.ranks.length === 2) {
+      let newRanksObj = {};
+      let dbObj = {
+        Duel: 0,
+        Doubles: 0,
+        Standard: 0,
+        Hoops: 0,
+        Rumble: 0,
+        Dropshot: 0,
+        'Snow Day': 0
+      };
+      this.props.ranks[0].map(playlist => {
+        newRanksObj[playlist.playlist] = playlist.mrr;
+        // return <Lists>{playlist.playlist}: {playlist.rank} Div. {playlist.division} ({playlist.mmr})</Lists>
+      });
+      dbObj.Duel = this.props.ranks[1].duel;
+      dbObj.Doubles = this.props.ranks[1].doubles;
+      dbObj.Standard = this.props.ranks[1].standard;
+      dbObj.Hoops = this.props.ranks[1].hoops;
+      dbObj.Rumble = this.props.ranks[1].rumble;
+      dbObj.Dropshot = this.props.ranks[1].dropshot;
+      dbObj['Snow Day'] = this.props.ranks[1].snowday;
+      for (var key in newRanksObj) {
+
+      }
+    } else {
+      this.props.ranks.map(playlist => {
+        return <Lists>{playlist.playlist}: {playlist.rank} Div. {playlist.division} ({playlist.mmr})</Lists>
+      })
+    }
+  }
 
 
   render() {

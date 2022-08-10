@@ -14,9 +14,31 @@ console.log(`Server listening at http://localhost:${PORT}`);
 
 app.get('/ranks/:player', function(req, res) {
   // console.log(req.params)
+    let playerName = req.params.player;
+    let fqData;
+    let fqData2;
     handlers.getPlayerRanks(req.params.player)
     .then((data) => {
-      res.status(200).json(data.data);
+
+      // let check = (player) => {
+      //   return db.getOne(player);
+      // }
+      // let value = check(playerName);
+      // db.save(data.data.ranks, playerName)
+      fqData = data.data.ranks;
+      fqData2 = data.data
+
+      return db.getOne(playerName)
+    })
+    .then(data1 => {
+      if (data1 === null) {
+        res.status(200).json(fqData2);
+        db.save(fqData, playerName)
+      } else {
+        let dataArr = [fqData2, data1];
+        res.status(200).json(dataArr);
+      }
+      // console.log('The data: ', data1);
     })
     .catch((err) => {
       console.log(err)
