@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag } from '../assets/all.styles.jsx';
 
 class Stats extends React.Component {
   constructor(props) {
@@ -15,23 +16,23 @@ class Stats extends React.Component {
 
     return (
       <>
-        <h3>{this.props.player}</h3>
-        <h4>Playlist / Ranks</h4>
-        <p>Current Reward: {this.props.rewards.level} - Current Progress: {this.props.rewards.progress}/10 Wins</p>
-        <ol>
+        <PlayerName>{this.props.player}</PlayerName>
+        <H4s>Playlist / Ranks</H4s>
+        <PTag>Current Reward: {this.props.rewards.level} - Current Progress: {this.props.rewards.progress}/10 Wins</PTag>
+        <OrdList>
           {this.props.ranks.map(playlist => {
-            return <li>{playlist.playlist}: {playlist.rank} Division {playlist.division}</li>
+            return <Lists>{playlist.playlist}: {playlist.rank} Div. {playlist.division}</Lists>
           })}
-        </ol>
-        <h4>Current Statistics</h4>
-        <ol>
-          <li>Wins: {this.props.wins.value}</li>
-          <li>MVPs: {this.props.mvps.value}</li>
-          <li>Goals: {this.props.goals.value}</li>
-          <li>Shots: {this.props.shots.value}</li>
-          <li>Assists: {this.props.assists.value}</li>
-          <li>Saves: {this.props.saves.value}</li>
-        </ol>
+        </OrdList>
+        <H4s>Current Statistics</H4s>
+        <OrdList>
+          <Lists>Wins: {this.props.wins.value}</Lists>
+          <Lists>MVPs: {this.props.mvps.value}</Lists>
+          <Lists>Goals: {this.props.goals.value}</Lists>
+          <Lists>Shots: {this.props.shots.value}</Lists>
+          <Lists>Assists: {this.props.assists.value}</Lists>
+          <Lists>Saves: {this.props.saves.value}</Lists>
+        </OrdList>
       </>
 
     )

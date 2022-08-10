@@ -4,6 +4,7 @@ import axios from 'axios';
 import Home from './components/homepage.jsx';
 import Nav from './components/navbar.jsx';
 import Stats from './components/statspage.jsx';
+import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag, Global } from './assets/all.styles.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,15 +20,38 @@ class App extends React.Component {
       goals: {},
       assists: {},
       titles: [],
+      news: [],
+      showHomePage: true,
     }
   };
+
+  componentDidMount = () => {
+    this.getTheNews();
+  }
+
+  getTheNews = async () => {
+    await Promise.all([
+      axios.get('/news')
+    ])
+    .then(res => {
+      this.setState({
+        news: res[0].data.articles,
+      })
+    })
+  }
 
   searchPlayer = (e) => {
     this.setState({
       player: e.target.value,
     })
-    console.log(this.state.player)
   };
+
+  homeButton = () => {
+    this.setState({
+      showHomePage: true,
+      ranks: [],
+    })
+  }
 
   buttonSearch = async () => {
     await Promise.all([
@@ -52,6 +76,7 @@ class App extends React.Component {
           goals: res[5].data,
           assists: res[6].data,
           titles: res[7].data.titles,
+          showHomePage: false,
         });
       });
   };
@@ -59,13 +84,18 @@ class App extends React.Component {
   render() {
 
     return (
-      <>
+      <AppContainer>
+        <Global/>
         <Nav
           searchPlayer={this.searchPlayer}
-          buttonSearch={this.buttonSearch}>
+          buttonSearch={this.buttonSearch}
+          homeButton={this.homeButton}
+          >
         </Nav>
-        <Home></Home>
-        <Stats
+        {this.state.showHomePage ? <Home
+          news={this.state.news}
+        ></Home> : null}
+        {this.state.ranks.length > 0 ? <Stats
         player={this.state.player}
         ranks={this.state.ranks}
         rewards={this.state.rewards}
@@ -76,8 +106,8 @@ class App extends React.Component {
         goals={this.state.goals}
         assists={this.state.assists}
         titles={this.state.titles}
-        ></Stats>
-      </>
+        ></Stats> : null}
+      </AppContainer>
     )
   }
 }

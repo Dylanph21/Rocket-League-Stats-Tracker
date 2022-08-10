@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag } from '../assets/all.styles.jsx';
+import RLLogo from '../assets/RLLogo.png';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -15,12 +17,16 @@ class Nav extends React.Component {
 
     return (
       <>
-      <h2>Rocket League Tracker</h2>
+      <Title>Welcome to Rocket League Tracker!</Title>
+      <img style={{height: 40, width: 60}} src={RLLogo}></img>
+      <H5s>Enter your Epic ID to view your current ranks and statistics.</H5s>
       <input
       placeholder='Search Epic ID'
       onChange={this.props.searchPlayer}
+      style={{margin: 0, padding: 0}}
       />
-      <button onClick={this.props.buttonSearch}>Search</button>
+      <Button onClick={this.props.buttonSearch}>Search</Button>
+      <Button onClick={this.props.homeButton}>Home</Button>
       </>
     )
   }
