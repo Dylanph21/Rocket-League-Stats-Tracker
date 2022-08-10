@@ -84,8 +84,9 @@ class App extends React.Component {
   render() {
 
     return (
-      <AppContainer>
-        <Global/>
+      // <AppContainer>
+      <>
+      <Global/>
         <Nav
           searchPlayer={this.searchPlayer}
           buttonSearch={this.buttonSearch}
@@ -95,7 +96,8 @@ class App extends React.Component {
         {this.state.showHomePage ? <Home
           news={this.state.news}
         ></Home> : null}
-        {this.state.ranks.length > 0 ? <Stats
+        {this.state.ranks.length > 0 ?
+        <Stats
         player={this.state.player}
         ranks={this.state.ranks}
         rewards={this.state.rewards}
@@ -107,7 +109,8 @@ class App extends React.Component {
         assists={this.state.assists}
         titles={this.state.titles}
         ></Stats> : null}
-      </AppContainer>
+      </>
+      // {/* </AppContainer> */}
     )
   }
 }
