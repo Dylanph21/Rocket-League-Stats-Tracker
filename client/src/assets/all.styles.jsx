@@ -29,7 +29,7 @@ export const AppContainer = styled.div`
     /* top: 0px;
     left: 0px; */
     /* max-width: 560px; */
-    width: 45%;
+    width: 60%;
     height: 100%;
     border-radius: 100px;
 `;
@@ -105,7 +105,7 @@ font-size: 20px;
 
 export const PlayerName = styled.h3`
 text-align: center;
-color: #c0c0c0;
+color: #000000;
 font-size: 35px;
 margin-bottom: 0px;
 margin-top: 15px;
@@ -190,4 +190,49 @@ export const InField = styled.input`
   border-radius: 5px;
   width: 300px;
   height: 30px;
+`;
+
+export const RanksTable = styled.table`
+  border: 3px solid black;
+  border-radius: 10px;
+  border-spacing: 0;
+  margin: 0 auto;
+  min-width: 800px;
+  background: #131466;
+  font-size: 25px;
+`;
+
+export const TableHeader = styled.th`
+  /* border-bottom: 3px solid black; */
+  margin: 0;
+  padding: 0;
+  min-width: 334px;
+  border-spacing: 0;
+  background: #14378f;
+  font-size: 25px;
+  color: white;
+`;
+
+export const TableData = styled.td`
+  /* border-bottom: 3px solid grey; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: white;
+  border-spacing: 0;
+  /* min-width: 334px;
+  background: white;
+  /* font-size: 25px; */
+`;
+
+export const TableData2 = styled.td`
+  /* border-bottom: 3px solid grey; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: #001538;
+  color: white;
+  border-spacing: 0;
+  min-height: 40px;
+  /* min-width: 334px;
+  background: white;
+  /* font-size: 25px; */
 `;

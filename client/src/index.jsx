@@ -66,11 +66,11 @@ class App extends React.Component {
     ])
       .then(res => {
         document.getElementById('InField').value = '';
-        console.log(res);
+        // console.log(res);
         if (res[0].data.length === 2) {
           this.setState({
             ranks: res[0].data,
-            rewards: res[0].data.reward,
+            rewards: res[0].data[0].reward,
             wins: res[1].data,
             mvps: res[2].data,
             shots: res[3].data,
