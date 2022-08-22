@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag, PTagStat, RanksTable, TableHeader, TableData, TableData2 } from '../assets/all.styles.jsx';
+import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag, PTagStat, RanksTable, TableHeader, TableData, TableData2, LTTable } from '../assets/all.styles.jsx';
 import epicgameslogo from '../assets/epicgameslogo.png';
 
 class Stats extends React.Component {
@@ -98,15 +98,35 @@ class Stats extends React.Component {
               <TableData>{this.props.ranks[5].mmr}</TableData>
             </tr>
           </RanksTable>
-          <H4s>Current Statistics</H4s>
-          <OrdList>
-            <Lists>Wins: {this.props.wins.value}</Lists>
+          <LTTable>
+            <tr>
+              <TableHeader>Lifetime Stats</TableHeader>
+            </tr>
+            <tr>
+              <TableData2>Wins: {this.props.wins.value}</TableData2>
+            </tr>
+            <tr>
+              <TableData2>MVPs: {this.props.mvps.value}</TableData2>
+            </tr>
+            <tr>
+              <TableData2>Goals: {this.props.goals.value}</TableData2>
+            </tr>
+            <tr>
+              <TableData2>Shots: {this.props.shots.value}</TableData2>
+            </tr>
+            <tr>
+              <TableData2>Assists: {this.props.assists.value}</TableData2>
+            </tr>
+            <tr>
+              <TableData2>Saves: {this.props.saves.value}</TableData2>
+            </tr>
+            {/* <Lists>Wins: {this.props.wins.value}</Lists>
             <Lists>MVPs: {this.props.mvps.value}</Lists>
             <Lists>Goals: {this.props.goals.value}</Lists>
             <Lists>Shots: {this.props.shots.value}</Lists>
             <Lists>Assists: {this.props.assists.value}</Lists>
-            <Lists>Saves: {this.props.saves.value}</Lists>
-          </OrdList>
+            <Lists>Saves: {this.props.saves.value}</Lists> */}
+          </LTTable>
         </AppContainer>
 
       )

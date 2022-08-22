@@ -49,5 +49,6 @@ module.exports = {
         AUTH_SECRET: JSON.stringify(process.env.AUTH_SECRET),
       },
     }),
+
   ],
 };

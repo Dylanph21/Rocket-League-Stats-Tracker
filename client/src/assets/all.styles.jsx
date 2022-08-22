@@ -4,9 +4,11 @@ import RLBackground from './RLBackground.jpg';
 import threeCars from './3Cars.jpg';
 import RLBG1 from './RLBG1.jpg';
 
+
 export const Title = styled.h1`
-font-size: 3em;
+font-size: 3.2em;
 text-align: center;
+font-family: 'Anton', sans-serif;
 color: white;
 margin-bottom: 10px;
 margin-top: 15px;
@@ -21,7 +23,7 @@ export const AppContainer = styled.div`
   text-align: center;
   /* z-index: 10; */
     /* background: rgba(0, 0, 128, .6); */
-    background: linear-gradient(to right, rgba(255,140, 0, .8), rgba(0, 0, 100, .8));
+    background: linear-gradient(to right, rgba(255,140, 0, .6), rgba(0, 0, 100, .6));
     color: #131466;
     opacity: 1;
     /* position: fixed; */
@@ -107,6 +109,7 @@ export const PlayerName = styled.h3`
 text-align: center;
 color: #000000;
 font-size: 35px;
+font-family: 'Anton', sans-serif;
 margin-bottom: 0px;
 margin-top: 15px;
 `;
@@ -176,6 +179,7 @@ export const Global = createGlobalStyle`
     top: 0;
     left: 0;
   }
+
 `;
 
 export const InField = styled.input`
@@ -235,4 +239,25 @@ export const TableData2 = styled.td`
   /* min-width: 334px;
   background: white;
   /* font-size: 25px; */
+`;
+
+export const LTTable = styled.table`
+  border: 3px solid black;
+  border-radius: 10px;
+  border-spacing: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: #131466;
+  font-size: 25px;
+`;
+
+export const GlobalFonts = createGlobalStyle`
+  @font-face {
+    font-family: 'Font Name';
+        src: local('Anton'),
+        url('https://fonts.googleapis.com/css2?family=Anton&display=swap') format('otf');
+        font-weight: 300;
+        font-style: normal;
+  }
 `;

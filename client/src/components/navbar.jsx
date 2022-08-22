@@ -5,6 +5,7 @@ import RLLogo from '../assets/RLLogo.png';
 import Button1 from 'react-bootstrap/Button';
 import negativeRL from '../assets/negativeRL.png';
 
+
 class Nav extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,7 @@ class Nav extends React.Component {
     return (
       <>
       <NavContainer>
+
       {/* <img style={{left: -80, height: 80, width: 95}} src={BandWRL}></img> */}
       <Title>Rocket League Tracker</Title>
       <img style={{ height: 95, width: 95}} src={negativeRL}></img>

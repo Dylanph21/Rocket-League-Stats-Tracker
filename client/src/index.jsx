@@ -4,7 +4,8 @@ import axios from 'axios';
 import Home from './components/homepage.jsx';
 import Nav from './components/navbar.jsx';
 import Stats from './components/statspage.jsx';
-import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag, Global } from './assets/all.styles.jsx';
+import { AppContainer, Button, Title, OrdList, Lists, H4s, H5s, PlayerName, PTag, Global, GlobalFonts } from './assets/all.styles.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -104,6 +105,7 @@ class App extends React.Component {
       // <AppContainer>
       <>
       <Global/>
+      <GlobalFonts/>
         <Nav
           searchPlayer={this.searchPlayer}
           buttonSearch={this.buttonSearch}
