@@ -18,11 +18,11 @@ Project to outline technical skills, organization, and decision making.
 
 ## Component Details
 ### Home Page
-![RLTracker-Homepage](./readme_visuals/RLTracker-Homepage.png)
+![RLTracker-Homepage](./readme_visuals/RLTracker-Homepage.PNG)
 Rocket League Tracker's homepage displays the current news and events being held by Rocket League in the style of a React-Slick carousel
 
 ### Statistcs and Ranks 
-![RLTracker-Statspage](./readme_visuals/RLTracker-Statspage.png)
+![RLTracker-Statspage](./readme_visuals/RLTracker-Statspage.PNG)
 Statistics and Ranks page displays the players current ranks and statistics based on an input Epic ID. 
 
 ## Installation
