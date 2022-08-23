@@ -3,7 +3,7 @@
 
 ## Motivation
 
-Project to outline technical skills, organization, and decision making.
+Outline of technical skills, organization, and decision making in a 48-hour time frame.
 
 ### Built With
 
@@ -19,7 +19,7 @@ Project to outline technical skills, organization, and decision making.
 ## Component Details
 ### Home Page
 ![RLTracker-Homepage](./readme_visuals/RLTracker-Homepage.PNG)
-Rocket League Tracker's homepage displays the current news and events being held by Rocket League in the style of a React-Slick carousel
+Rocket League Tracker's homepage displays the current news and events being held by Rocket League in the style of a React-Slick carousel.
 
 ### Statistcs and Ranks 
 ![RLTracker-Statspage](./readme_visuals/RLTracker-Statspage.PNG)
@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple steps:
    ```sh
    git clone https://github.com/Dylanph21/Rocket-League-Stats-Tracker.git
    ```
-2. Acquire a RapidAPI-key from https://rapidapi.com/rocket-league-rocket-league-default/api/rocket-league1/ by creating an account or logging in. Insert key into example.env and rename file to .env
+2. Acquire a free RapidAPI-key from https://rapidapi.com/rocket-league-rocket-league-default/api/rocket-league1/ by creating an account or logging in. Insert key into example.env and rename file to .env
 3. Install NPM packages
    ```sh
    npm install
@@ -56,4 +56,4 @@ To get a local copy up and running follow these simple steps:
 
 * Dylan Hollier - Product Overview
   * https://github.com/Dylanph21
-  * https://www.linkedin.com/in/dylan-hollier-b4a56321a/
+  * https://www.linkedin.com/in/dylanhollier/
